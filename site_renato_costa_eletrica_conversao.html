@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Serviços elétricos profissionais com segurança, precisão e acabamento premium." />
+  <title>Renato Costa — Instalação e Manutenção Elétrica</title>
+
+  <style>
+    :root{
+      --yellow:#ffd400;
+      --yellow-2:#ffea00;
+      --black:#080808;
+      --black-2:#101010;
+      --graphite:#181818;
+      --line:#2b2b2b;
+      --white:#f5f5f2;
+      --muted:#a8a8a3;
+      --shadow:0 24px 80px rgba(0,0,0,.32);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--black);
+      color:var(--white);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--yellow);
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:26px;
+      height:2px;
+      background:var(--yellow);
+      box-shadow:0 0 18px rgba(255,212,0,.7);
+    }
+
+    .section{
+      padding:110px 0;
+      position:relative;
+    }
+
+    .section-title{
+      margin:16px 0 18px;
+      max-width:850px;
+      font-size:clamp(2.3rem,5vw,5.2rem);
+      line-height:.94;
+      letter-spacing:-.055em;
+      text-transform:uppercase;
+      font-weight:950;
+    }
+
+    .section-copy{
+      max-width:690px;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    /* NAV */
+    .topbar{
+      position:fixed;
+      inset:0 0 auto 0;
+      z-index:50;
+      background:rgba(8,8,8,.76);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    .nav{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      font-weight:950;
+      letter-spacing:-.04em;
+      font-size:1.2rem;
+    }
+
+    .brand-mark{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background:var(--yellow);
+      color:#000;
+      box-shadow:0 0 30px rgba(255,212,0,.18);
+    }
+
+    .brand-mark svg{width:20px;height:20px}
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      color:#d6d6d1;
+      font-size:.92rem;
+      font-weight:650;
+    }
+
+    .nav-links a{
+      position:relative;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{color:var(--yellow)}
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:850;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn-primary{
+      background:var(--yellow);
+      color:#050505;
+      box-shadow:0 14px 40px rgba(255,212,0,.16);
+    }
+
+    .btn-primary:hover{
+      background:var(--yellow-2);
+      box-shadow:0 16px 46px rgba(255,212,0,.28);
+    }
+
+    .btn-ghost{
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.04);
+      color:var(--white);
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:135px 0 60px;
+      overflow:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:700px;
+      height:700px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,212,0,.16), transparent 62%);
+      top:-150px;
+      right:-180px;
+      filter:blur(10px);
+      z-index:-2;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-3;
+      opacity:.24;
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size:52px 52px;
+      mask-image:linear-gradient(to bottom, #000, transparent 88%);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .hero-kicker{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--yellow);
+      text-transform:uppercase;
+      letter-spacing:.17em;
+      font-size:.78rem;
+      font-weight:850;
+      margin-bottom:24px;
+    }
+
+    .pulse{
+      width:10px;height:10px;
+      border-radius:50%;
+      background:var(--yellow);
+      box-shadow:0 0 0 8px rgba(255,212,0,.08), 0 0 26px rgba(255,212,0,.8);
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:clamp(4rem,9.2vw,8.5rem);
+      line-height:.82;
+      letter-spacing:-.075em;
+      text-transform:uppercase;
+      font-weight:950;
+      max-width:920px;
+    }
+
+    .hero h1 .accent{
+      color:var(--yellow);
+      text-shadow:0 0 50px rgba(255,212,0,.12);
+    }
+
+    .hero-lead{
+      max-width:700px;
+      margin:30px 0 34px;
+      font-size:clamp(1.05rem,1.7vw,1.3rem);
+      color:#bdbdb7;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .hero-panel{
+      min-height:480px;
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:34px;
+      background:
+        linear-gradient(145deg, rgba(255,212,0,.08), transparent 38%),
+        linear-gradient(180deg, #171717, #0c0c0c);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .bolt{
+      position:absolute;
+      width:235px;
+      height:390px;
+      right:-8px;
+      top:35px;
+      filter:drop-shadow(0 0 28px rgba(255,212,0,.18));
+      opacity:.98;
+    }
+
+    .status{
+      width:max-content;
+      padding:9px 13px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.24);
+      color:#d4d4ce;
+      font-size:.78rem;
+      font-weight:750;
+      z-index:2;
+    }
+
+    .hero-panel-bottom{
+      z-index:2;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .metric{
+      padding:18px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(0,0,0,.28);
+      border-radius:18px;
+      backdrop-filter:blur(12px);
+    }
+
+    .metric strong{
+      display:block;
+      font-size:1.8rem;
+      letter-spacing:-.05em;
+    }
+
+    .metric span{
+      font-size:.78rem;
+      color:var(--muted);
+    }
+
+    /* TRUST STRIP */
+    .trust-strip{
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:#0d0d0d;
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .trust-item{
+      padding:28px 24px;
+      border-right:1px solid rgba(255,255,255,.08);
+    }
+    .trust-item:last-child{border-right:0}
+    .trust-item strong{
+      display:block;
+      font-size:1.25rem;
+      letter-spacing:-.03em;
+    }
+    .trust-item span{
+      display:block;
+      margin-top:5px;
+      color:var(--muted);
+      font-size:.82rem;
+    }
+
+    /* SERVICES */
+    .services{
+      background:var(--white);
+      color:#0b0b0b;
+    }
+
+    .services .section-copy{color:#555}
+
+    .service-grid{
+      margin-top:48px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .service-card{
+      min-height:330px;
+      padding:28px;
+      border-radius:24px;
+      background:#fff;
+      border:1px solid #deded9;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:.28s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card:hover{
+      transform:translateY(-7px);
+      border-color:#bdbdb8;
+      box-shadow:0 25px 60px rgba(0,0,0,.1);
+    }
+
+    .service-card.featured{
+      background:var(--yellow);
+      border-color:var(--yellow);
+    }
+
+    .service-number{
+      font-size:.78rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      color:#6a6a65;
+    }
+
+    .service-card.featured .service-number{color:#000}
+
+    .service-icon{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      border:1px solid #d9d9d3;
+      background:#f4f4ef;
+      margin-bottom:28px;
+    }
+
+    .service-card.featured .service-icon{
+      background:#0b0b0b;
+      border-color:#0b0b0b;
+      color:var(--yellow);
+    }
+
+    .service-icon svg{width:27px;height:27px}
+
+    .service-card h3{
+      margin:0 0 10px;
+      font-size:1.55rem;
+      letter-spacing:-.045em;
+    }
+
+    .service-card p{
+      margin:0;
+      color:#65655f;
+    }
+
+    .service-card.featured p{color:#222}
+
+    /* AUTHORITY */
+    .authority{
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,212,0,.08), transparent 32%),
+        #0a0a0a;
+    }
+
+    .authority-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:70px;
+      align-items:start;
+    }
+
+    .authority-sticky{position:sticky; top:120px}
+
+    .authority-list{
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+
+    .authority-row{
+      display:grid;
+      grid-template-columns:72px 1fr;
+      gap:18px;
+      padding:30px 0;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .authority-row .num{
+      color:var(--yellow);
+      font-weight:900;
+      letter-spacing:.1em;
+      font-size:.82rem;
+    }
+
+    .authority-row h3{
+      margin:0 0 10px;
+      font-size:1.45rem;
+      letter-spacing:-.035em;
+    }
+
+    .authority-row p{
+      margin:0;
+      color:var(--muted);
+      max-width:620px;
+    }
+
+
+
+
+    /* CONVERSION / UX OPTIMIZATION */
+    :root{
+      --container-narrow:760px;
+    }
+
+    body{
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .conversion-note{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:18px;
+      color:#d7d7d1;
+      font-size:.9rem;
+      font-weight:650;
+    }
+
+    .conversion-note::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--yellow);
+      box-shadow:0 0 18px rgba(255,212,0,.6);
+      flex:0 0 auto;
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:22px 0 0;
+    }
+
+    .hero-proof span{
+      display:inline-flex;
+      align-items:center;
+      min-height:36px;
+      padding:0 13px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:#d8d8d1;
+      font-size:.78rem;
+      font-weight:760;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:end;
+      margin-bottom:42px;
+    }
+
+    .section-head .section-copy{
+      max-width:540px;
+    }
+
+    .mini-cta{
+      white-space:nowrap;
+    }
+
+    .trust-strip{
+      position:relative;
+      z-index:4;
+    }
+
+    .trust-item strong{
+      font-size:1.08rem;
+    }
+
+    .trust-item span{
+      line-height:1.45;
+    }
+
+    .service-card{
+      min-height:300px;
+    }
+
+    .service-card .service-cta{
+      margin-top:18px;
+      font-weight:850;
+      font-size:.88rem;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .service-card .service-cta::after{
+      content:"→";
+      transition:transform .2s ease;
+    }
+
+    .service-card:hover .service-cta::after{
+      transform:translateX(4px);
+    }
+
+    .conversion-band{
+      padding:30px 0;
+      background:var(--yellow);
+      color:#090909;
+    }
+
+    .conversion-band-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+
+    .conversion-band strong{
+      display:block;
+      font-size:clamp(1.35rem,2vw,2rem);
+      letter-spacing:-.04em;
+    }
+
+    .conversion-band span{
+      display:block;
+      margin-top:4px;
+      font-size:.92rem;
+      opacity:.72;
+    }
+
+    .conversion-band .btn{
+      background:#0a0a0a;
+      color:#fff;
+      flex:0 0 auto;
+    }
+
+    .faq{
+      background:#0b0b0b;
+    }
+
+    .faq-grid{
+      max-width:920px;
+      margin:42px auto 0;
+      display:grid;
+      gap:12px;
+    }
+
+    details.faq-item{
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:18px;
+      background:#121212;
+      overflow:hidden;
+    }
+
+    details.faq-item summary{
+      list-style:none;
+      cursor:pointer;
+      padding:21px 24px;
+      font-weight:820;
+      letter-spacing:-.02em;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    details.faq-item summary::-webkit-details-marker{
+      display:none;
+    }
+
+    details.faq-item summary::after{
+      content:"+";
+      color:var(--yellow);
+      font-size:1.4rem;
+      font-weight:400;
+    }
+
+    details.faq-item[open] summary::after{
+      content:"−";
+    }
+
+    .faq-answer{
+      padding:0 24px 22px;
+      color:var(--muted);
+      font-size:.95rem;
+      max-width:760px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      margin-top:34px;
+      text-align:left;
+    }
+
+    .contact-card{
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:22px;
+      background:rgba(255,255,255,.035);
+      padding:24px;
+    }
+
+    .contact-card h3{
+      margin:0 0 9px;
+      font-size:1.2rem;
+      letter-spacing:-.03em;
+    }
+
+    .contact-card p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .contact-list a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:52px;
+      padding:0 16px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:14px;
+      background:#111;
+      font-weight:720;
+    }
+
+    .contact-list a:hover{
+      border-color:rgba(255,212,0,.45);
+    }
+
+    .sticky-whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:80;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height:54px;
+      padding:0 18px;
+      border-radius:999px;
+      background:var(--yellow);
+      color:#080808;
+      box-shadow:0 16px 40px rgba(0,0,0,.28);
+      font-weight:900;
+      font-size:.9rem;
+    }
+
+    .sticky-whatsapp:hover{
+      transform:translateY(-2px);
+    }
+
+    @media (max-width: 980px){
+      .section-head{
+        display:block;
+      }
+
+      .section-head .mini-cta{
+        margin-top:22px;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 720px){
+      .conversion-band-inner{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .conversion-band .btn{
+        width:100%;
+      }
+
+      .sticky-whatsapp{
+        left:14px;
+        right:14px;
+        bottom:14px;
+        justify-content:center;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .hero-proof{
+        gap:8px;
+      }
+
+      .hero-proof span{
+        font-size:.72rem;
+      }
+    }
+
+
+    /* HERO MEDIA / PORTRAIT */
+    .hero-portrait-panel{
+      padding:22px 22px 22px 22px;
+    }
+
+    .hero-media-stage{
+      position:relative;
+      min-height:330px;
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:#111;
+      margin:16px 0 18px;
+    }
+
+    .hero-bg-photo{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.1)),
+        radial-gradient(circle at 75% 28%, rgba(255,212,0,.2), transparent 32%),
+        url("fundo-eletrica.jpg") center/cover no-repeat;
+      filter:saturate(1.05) contrast(1.02);
+      transform:scale(1.02);
+    }
+
+    .hero-bg-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(135deg, rgba(8,8,8,.18), rgba(8,8,8,.82) 60%),
+        linear-gradient(180deg, rgba(255,212,0,.12), transparent 38%);
+      z-index:1;
+    }
+
+    .portrait-holder{
+      position:absolute;
+      inset:auto 0 0 0;
+      height:100%;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      z-index:2;
+      padding:0 10px;
+    }
+
+    .portrait-img{
+      max-height:100%;
+      width:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));
+    }
+
+    .portrait-placeholder{
+      display:none;
+      min-width:220px;
+      max-width:260px;
+      min-height:260px;
+      border-radius:22px;
+      border:1px dashed rgba(255,255,255,.3);
+      background:rgba(255,255,255,.04);
+      color:#f0f0ea;
+      text-align:center;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      font-size:1rem;
+      line-height:1.35;
+      backdrop-filter:blur(4px);
+    }
+
+    .portrait-holder.placeholder-mode .portrait-placeholder{
+      display:flex;
+      margin-bottom:18px;
+    }
+
+    .bolt-secondary{
+      width:145px;
+      height:230px;
+      right:-18px;
+      top:10px;
+      opacity:.75;
+      z-index:2;
+      position:absolute;
+      filter:drop-shadow(0 0 24px rgba(255,212,0,.22));
+    }
+
+    /* PRESENTATION */
+    .presentation{
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,212,0,.08), transparent 26%),
+        #0a0a0a;
+    }
+
+    .presentation-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .presentation-points{
+      margin:34px 0 30px;
+      display:grid;
+      gap:14px;
+    }
+
+    .presentation-point{
+      padding:18px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+    }
+
+    .presentation-point strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1rem;
+      letter-spacing:-.02em;
+    }
+
+    .presentation-point span{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .social-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .presentation-card{
+      min-height:560px;
+      position:relative;
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.1);
+      background:#111;
+      box-shadow:var(--shadow);
+      isolation:isolate;
+    }
+
+    .presentation-card-bg{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 68% 22%, rgba(255,212,0,.24), transparent 24%),
+        url("fundo-eletrica.jpg") center/cover no-repeat;
+      transform:scale(1.03);
+    }
+
+    .presentation-card-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(8,8,8,.12), rgba(8,8,8,.86) 86%),
+        linear-gradient(135deg, rgba(255,212,0,.22), transparent 36%);
+      z-index:1;
+    }
+
+    .presentation-portrait-wrap{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:0 22px;
+    }
+
+    .presentation-portrait{
+      max-height:95%;
+      width:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 20px 40px rgba(0,0,0,.42));
+    }
+
+    .presentation-portrait-placeholder{
+      display:none;
+      width:min(100%, 320px);
+      min-height:320px;
+      border-radius:24px;
+      border:1px dashed rgba(255,255,255,.32);
+      background:rgba(255,255,255,.05);
+      color:#f4f4ee;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
+      margin-bottom:30px;
+      font-weight:700;
+    }
+
+    .presentation-portrait-wrap.placeholder-mode .presentation-portrait-placeholder{
+      display:flex;
+    }
+
+    .presentation-badge{
+      position:absolute;
+      left:22px;
+      top:22px;
+      z-index:3;
+      font-size:.75rem;
+      font-weight:850;
+      letter-spacing:.14em;
+      color:#111;
+      background:var(--yellow);
+      padding:10px 14px;
+      border-radius:999px;
+      box-shadow:0 12px 28px rgba(255,212,0,.18);
+    }
+
+    /* GALLERY */
+    .gallery{
+      background:#fff;
+      color:#090909;
+    }
+
+    .gallery .section-copy{
+      color:#555;
+    }
+
+    .gallery-grid{
+      margin-top:46px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .gallery-card{
+      border-radius:24px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e1e1db;
+      transition:.25s ease;
+    }
+
+    .gallery-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 55px rgba(0,0,0,.1);
+      border-color:#cfcfc8;
+    }
+
+    .gallery-thumb{
+      min-height:240px;
+      display:flex;
+      align-items:flex-end;
+      padding:18px;
+      background:
+        linear-gradient(180deg, rgba(255,212,0,.08), rgba(255,212,0,.22)),
+        linear-gradient(135deg, #1c1c1c, #575757);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .gallery-thumb::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size:26px 26px;
+      opacity:.55;
+    }
+
+    .gallery-thumb span{
+      position:relative;
+      z-index:2;
+      display:inline-flex;
+      width:max-content;
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(0,0,0,.68);
+      color:#fff;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .gallery-content{
+      padding:22px;
+    }
+
+    .gallery-content h3{
+      margin:0 0 9px;
+      font-size:1.25rem;
+      letter-spacing:-.03em;
+    }
+
+    .gallery-content p{
+      margin:0;
+      color:#66655f;
+      font-size:.95rem;
+    }
+
+
+    /* CERTIFICATIONS */
+    .certifications{
+      background:#0c0c0c;
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .cert-grid{
+      margin-top:48px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .cert-card{
+      min-height:190px;
+      padding:26px;
+      border-radius:22px;
+      background:
+        linear-gradient(145deg, rgba(255,212,0,.08), transparent 48%),
+        #151515;
+      border:1px solid rgba(255,255,255,.09);
+      position:relative;
+      overflow:hidden;
+      transition:.25s ease;
+    }
+
+    .cert-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(255,212,0,.45);
+      box-shadow:0 18px 50px rgba(0,0,0,.28);
+    }
+
+    .cert-card span{
+      display:block;
+      color:var(--yellow);
+      font-size:.72rem;
+      font-weight:900;
+      letter-spacing:.16em;
+      margin-bottom:46px;
+    }
+
+    .cert-card h3{
+      margin:0;
+      font-size:1.22rem;
+      line-height:1.15;
+      letter-spacing:-.03em;
+    }
+
+    /* PROCESS */
+    .process{
+      background:#111;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:50px;
+    }
+
+    .step{
+      min-height:290px;
+      padding:26px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.09);
+      background:linear-gradient(180deg,#171717,#101010);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .step::after{
+      content:"";
+      position:absolute;
+      width:90px;height:90px;
+      background:var(--yellow);
+      filter:blur(70px);
+      opacity:.08;
+      right:-10px;
+      bottom:-20px;
+    }
+
+    .step b{
+      color:var(--yellow);
+      font-size:.75rem;
+      letter-spacing:.16em;
+    }
+
+    .step h3{
+      margin:75px 0 12px;
+      font-size:1.45rem;
+      letter-spacing:-.04em;
+    }
+
+    .step p{
+      margin:0;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    /* TESTIMONIAL */
+    .proof{
+      background:var(--yellow);
+      color:#090909;
+      overflow:hidden;
+    }
+
+    .proof-card{
+      display:grid;
+      grid-template-columns:1fr 260px;
+      gap:50px;
+      align-items:end;
+    }
+
+    .quote{
+      font-size:clamp(2.2rem,5vw,5.3rem);
+      line-height:.98;
+      letter-spacing:-.06em;
+      font-weight:900;
+      max-width:950px;
+      margin:12px 0 0;
+    }
+
+    .client{
+      border-left:2px solid #111;
+      padding-left:20px;
+      font-size:.95rem;
+    }
+
+    .client strong{
+      display:block;
+      font-size:1.1rem;
+    }
+
+    /* CTA */
+    .cta{
+      background:#070707;
+      text-align:center;
+    }
+
+    .cta-box{
+      border-radius:34px;
+      background:
+        linear-gradient(135deg, rgba(255,212,0,.11), transparent 35%),
+        #121212;
+      border:1px solid rgba(255,255,255,.1);
+      padding:74px 28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;
+      border-radius:50%;
+      background:var(--yellow);
+      filter:blur(120px);
+      opacity:.09;
+      left:50%;
+      top:-80px;
+      transform:translateX(-50%);
+    }
+
+    .cta h2{
+      font-size:clamp(2.4rem,6vw,5.8rem);
+      letter-spacing:-.06em;
+      line-height:.93;
+      text-transform:uppercase;
+      margin:0 auto 22px;
+      max-width:900px;
+    }
+
+    .cta p{
+      color:var(--muted);
+      max-width:620px;
+      margin:0 auto 30px;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:46px 0 26px;
+      border-top:1px solid rgba(255,255,255,.08);
+      background:#050505;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.3fr .7fr .7fr;
+      gap:50px;
+    }
+
+    .footer-title{
+      color:#7d7d79;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.72rem;
+      font-weight:850;
+      margin-bottom:14px;
+    }
+
+    .footer-col a,
+    .footer-col span{
+      display:block;
+      color:#c7c7c1;
+      margin:7px 0;
+      font-size:.92rem;
+    }
+
+    .footer-note{
+      margin-top:34px;
+      padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.08);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      color:#686865;
+      font-size:.78rem;
+    }
+
+    .mobile-menu{display:none}
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .authority-grid,
+      .proof-card,
+      .presentation-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-panel{min-height:390px}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .cert-grid{grid-template-columns:1fr 1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .authority-sticky{position:relative;top:auto}
+      .proof-card{gap:30px}
+      .client{max-width:320px}
+    }
+
+    @media (max-width: 720px){
+      .container{width:min(100% - 28px, var(--max))}
+      .section{padding:82px 0}
+      .nav{height:70px}
+      .nav-links{display:none}
+      .mobile-menu{
+        display:inline-grid;
+        place-items:center;
+        width:44px;height:44px;
+        border-radius:50%;
+        border:1px solid rgba(255,255,255,.14);
+        background:#111;
+        color:white;
+      }
+
+      .hero{
+        padding-top:110px;
+        min-height:auto;
+      }
+
+      .hero-grid{gap:34px}
+      .hero h1{font-size:clamp(3.5rem,18vw,6rem)}
+      .hero-panel{min-height:330px;padding:20px}
+      .bolt{width:185px;height:305px}
+      .hero-panel-bottom{grid-template-columns:1fr 1fr}
+      .metric{padding:14px}
+      .metric strong{font-size:1.4rem}
+
+      .trust-grid,
+      .service-grid,
+      .cert-grid,
+      .gallery-grid,
+      .process-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .trust-item{
+        border-right:none;
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+
+      .service-card{min-height:280px}
+      .authority-row{grid-template-columns:48px 1fr}
+      .footer-note{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Renato Costa - Início">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M13 2 4.8 13h6L10 22l9.2-12h-6L13 2Z"/>
+          </svg>
+        </span>
+        RENATO COSTA <span style="font-weight:500;color:#b7b7b2;font-size:.78rem;letter-spacing:0">— Instalação e manutenção elétrica</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#certificacoes">Certificações</a>
+        <a href="#apresentacao">Apresentação</a>
+        <a href="#galeria">Projetos</a>
+        <a href="#processo">Processo</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn-primary" href="https://wa.me/5521992209322" target="_blank">Pedir orçamento</a>
+      </nav>
+
+      <button class="mobile-menu" aria-label="Abrir menu" onclick="document.querySelector('.mobile-drawer').classList.toggle('open')">
+        ☰
+      </button>
+    </div>
+
+    <div class="mobile-drawer" style="display:none"></div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-kicker"><span class="pulse"></span> Instalação e manutenção elétrica</div>
+
+          <h1>
+            Elétrica<br>
+            <span class="accent">bem feita.</span><br>
+            Sem improviso.
+          </h1>
+
+          <p class="hero-lead">
+            Atendimento residencial, predial e técnico com foco em segurança, organização e execução profissional.
+            Fale diretamente com Renato Costa para avaliar o seu serviço.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/5521992209322?text=Ol%C3%A1%2C%20Renato.%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" class="btn btn-primary">Pedir orçamento no WhatsApp →</a>
+            <a href="#galeria" class="btn btn-ghost">Ver projetos realizados</a>
+          </div>
+
+          <div class="hero-proof">
+            <span>5 anos de experiência</span>
+            <span>NR10 e NR35</span>
+            <span>Residencial, predial e industrial</span>
+          </div>
+
+          <div class="conversion-note">Resposta direta pelo WhatsApp para entender sua necessidade.</div>
+        </div>
+
+        <aside class="hero-panel hero-portrait-panel">
+          <span class="status">ATENDIMENTO TÉCNICO PROFISSIONAL</span>
+
+          <div class="hero-media-stage">
+            <div class="hero-bg-photo"></div>
+            <div class="hero-bg-overlay"></div>
+
+            <div class="portrait-holder">
+              <img
+                src="renato-costa-sem-fundo.png"
+                alt="Renato Costa"
+                class="portrait-img"
+                onerror="this.style.display='none'; this.parentElement.classList.add('placeholder-mode');"
+              />
+              <div class="portrait-placeholder">
+                PNG sem fundo do<br><strong>Renato Costa</strong>
+              </div>
+            </div>
+
+            <svg class="bolt bolt-secondary" viewBox="0 0 220 380" aria-hidden="true">
+              <path fill="#FFD400" d="M126 0 24 205h75L68 380l129-225h-82L126 0Z"/>
+            </svg>
+          </div>
+
+          <div class="hero-panel-bottom">
+            <div class="metric">
+              <strong>5 anos</strong>
+              <span>de experiência técnica</span>
+            </div>
+            <div class="metric">
+              <strong>100%</strong>
+              <span>foco em segurança</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <strong>Atendimento técnico</strong>
+          <span>Diagnóstico antes de executar qualquer solução</span>
+        </div>
+        <div class="trust-item">
+          <strong>Segurança</strong>
+          <span>Atuação com capacitação NR10 e NR35</span>
+        </div>
+        <div class="trust-item">
+          <strong>Versatilidade</strong>
+          <span>Residencial, predial, industrial e novas tecnologias</span>
+        </div>
+        <div class="trust-item">
+          <strong>Contato direto</strong>
+          <span>Orçamento e alinhamento pelo WhatsApp</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" style="color:#111">Serviços</span>
+            <h2 class="section-title">Soluções elétricas para resolver de verdade.</h2>
+            <p class="section-copy">
+              Serviços para instalações novas, manutenção, correções, modernizações e sistemas especiais.
+            </p>
+          </div>
+          <a href="https://wa.me/5521992209322?text=Ol%C3%A1%2C%20Renato.%20Quero%20falar%20sobre%20um%20servi%C3%A7o%20el%C3%A9trico." target="_blank" class="btn btn-primary mini-cta">Consultar meu serviço</a>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card featured">
+            <span class="service-number">01 / INSTALAÇÕES</span>
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2 5 13h6l-1 9 9-12h-6l0-8Z"/>
+                </svg>
+              </div>
+              <h3>Instalações completas</h3>
+              <p>Quadros, circuitos, tomadas, iluminação, adequações e infraestrutura elétrica.</p><a class="service-cta" href="#contato">Solicitar avaliação</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02 / MANUTENÇÃO</span>
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.4 2.4-3-3 2.4-2.4Z"/>
+                </svg>
+              </div>
+              <h3>Manutenção e reparos</h3>
+              <p>Identificação de falhas, curtos, quedas, aquecimentos, sobrecargas e pontos defeituosos.</p><a class="service-cta" href="#contato">Solicitar avaliação</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03 / ILUMINAÇÃO</span>
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18h6M10 22h4M8.5 14.5A6 6 0 1 1 15.5 14.5C14.5 15.3 14 16.2 14 17h-4c0-.8-.5-1.7-1.5-2.5Z"/>
+                </svg>
+              </div>
+              <h3>Iluminação técnica</h3>
+              <p>Instalação de luminárias, perfis, spots, pendentes e soluções de iluminação de alto padrão.</p><a class="service-cta" href="#contato">Solicitar avaliação</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04 / QUADROS</span>
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="3" width="16" height="18" rx="2"/>
+                  <path d="M8 8h8M8 12h8M8 16h5"/>
+                </svg>
+              </div>
+              <h3>Quadros elétricos</h3>
+              <p>Montagem, reorganização, identificação, troca de disjuntores e atualização de proteção.</p><a class="service-cta" href="#contato">Solicitar avaliação</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">05 / PROTEÇÃO</span>
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/>
+                  <path d="m9.5 12 1.7 1.7 3.6-4"/>
+                </svg>
+              </div>
+              <h3>Segurança e proteção</h3>
+              <p>Aterramento, DR, DPS, revisão de pontos críticos e prevenção de riscos elétricos.</p><a class="service-cta" href="#contato">Solicitar avaliação</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">06 / PROJETOS</span>
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16v16H4z"/>
+                  <path d="M8 4v16M4 9h4M8 14h12M14 9h6"/>
+                </svg>
+              </div>
+              <h3>Adequações e projetos</h3>
+              <p>Planejamento para reformas, ampliações e atualização de instalações existentes.</p><a class="service-cta" href="#contato">Solicitar avaliação</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="conversion-band">
+      <div class="container conversion-band-inner">
+        <div>
+          <strong>Não sabe exatamente qual serviço precisa?</strong>
+          <span>Envie uma mensagem com fotos ou uma breve descrição. Renato avalia o cenário inicial com você.</span>
+        </div>
+        <a class="btn" href="https://wa.me/5521992209322?text=Ol%C3%A1%2C%20Renato.%20N%C3%A3o%20sei%20exatamente%20qual%20servi%C3%A7o%20preciso%2C%20mas%20gostaria%20de%20explicar%20o%20problema." target="_blank">Explicar meu problema →</a>
+      </div>
+    </section>
+
+    <section class="section authority" id="diferenciais">
+      <div class="container authority-grid">
+        <div class="authority-sticky">
+          <span class="eyebrow">Padrão de execução</span>
+          <h2 class="section-title">Autoridade se constrói no detalhe.</h2>
+          <p class="section-copy">
+            Um serviço elétrico premium não é só “fazer funcionar”. É entregar segurança, organização, documentação e acabamento.
+          </p>
+        </div>
+
+        <div class="authority-list">
+          <div class="authority-row">
+            <div class="num">01</div>
+            <div>
+              <h3>Diagnóstico antes da execução</h3>
+              <p>Primeiro entendemos a origem do problema. Depois definimos a solução correta, evitando retrabalho e gasto desnecessário.</p>
+            </div>
+          </div>
+
+          <div class="authority-row">
+            <div class="num">02</div>
+            <div>
+              <h3>Organização e acabamento</h3>
+              <p>Fiação identificada, quadros organizados, passagens planejadas e ambiente preservado durante a execução.</p>
+            </div>
+          </div>
+
+          <div class="authority-row">
+            <div class="num">03</div>
+            <div>
+              <h3>Segurança como prioridade</h3>
+              <p>Materiais adequados, dimensionamento responsável e atenção aos elementos essenciais de proteção da instalação.</p>
+            </div>
+          </div>
+
+          <div class="authority-row">
+            <div class="num">04</div>
+            <div>
+              <h3>Formação técnica e certificações</h3>
+              <p>
+                Qualificação em elétrica industrial, predial e residencial, energia solar, carregadores para veículos elétricos,
+                automação residencial e atuação conforme requisitos de segurança NR10 e NR35.
+              </p>
+            </div>
+          </div>
+
+          <div class="authority-row">
+            <div class="num">05</div>
+            <div>
+              <h3>Comunicação clara</h3>
+              <p>Você entende o que será feito, por que será feito e quais são as opções antes da execução começar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section certifications" id="certificacoes">
+      <div class="container">
+        <span class="eyebrow">Certificações e especializações</span>
+        <h2 class="section-title">Capacitação técnica para diferentes tipos de projeto.</h2>
+        <p class="section-copy">
+          Renato Costa reúne formação e especializações para atuar em instalações convencionais,
+          sistemas modernos de energia e soluções elétricas de maior complexidade.
+        </p>
+
+        <div class="cert-grid">
+          <div class="cert-card">
+            <span>01</span>
+            <h3>Eletricista de manutenção industrial</h3>
+          </div>
+          <div class="cert-card">
+            <span>02</span>
+            <h3>Eletricista predial e residencial</h3>
+          </div>
+          <div class="cert-card">
+            <span>03</span>
+            <h3>Instalador de painel solar</h3>
+          </div>
+          <div class="cert-card">
+            <span>04</span>
+            <h3>Instalador de carregador de veículo elétrico</h3>
+          </div>
+          <div class="cert-card">
+            <span>05</span>
+            <h3>NR10</h3>
+          </div>
+          <div class="cert-card">
+            <span>06</span>
+            <h3>NR35</h3>
+          </div>
+          <div class="cert-card">
+            <span>07</span>
+            <h3>Automação residencial</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section presentation" id="apresentacao">
+      <div class="container presentation-grid">
+        <div>
+          <span class="eyebrow">Sobre Renato Costa</span>
+          <h2 class="section-title">Profissionalismo começa antes da execução.</h2>
+          <p class="section-copy">
+            Com 5 anos de experiência, Renato Costa atua em instalação e manutenção elétrica com formação em diferentes frentes da área,
+            buscando soluções seguras, organizadas e adequadas a cada necessidade.
+          </p>
+
+          <div class="presentation-points">
+            <div class="presentation-point">
+              <strong>Atendimento direto</strong>
+              <span>Você fala com o próprio profissional responsável pelo serviço.</span>
+            </div>
+            <div class="presentation-point">
+              <strong>Formação técnica diversificada</strong>
+              <span>Experiência em elétrica residencial, predial, industrial, solar, carregadores e automação.</span>
+            </div>
+            <div class="presentation-point">
+              <strong>Transparência no processo</strong>
+              <span>Explicação clara da necessidade, da solução proposta e da execução.</span>
+            </div>
+          </div>
+
+          <div class="social-buttons">
+            <a class="btn btn-primary" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-ghost" href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+
+        <div class="presentation-card">
+          <div class="presentation-card-bg"></div>
+          <div class="presentation-card-overlay"></div>
+
+          <div class="presentation-portrait-wrap">
+            <img
+              src="renato-costa-sem-fundo.png"
+              alt="Renato Costa"
+              class="presentation-portrait"
+              onerror="this.style.display='none'; this.parentElement.classList.add('placeholder-mode');"
+            />
+            <div class="presentation-portrait-placeholder">
+              Área para PNG sem fundo do Renato Costa
+            </div>
+          </div>
+
+          <div class="presentation-badge">RENATO COSTA</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="processo">
+      <div class="container">
+        <span class="eyebrow">Como trabalhamos</span>
+        <h2 class="section-title">Um processo simples. Um resultado profissional.</h2>
+
+        <div class="process-grid">
+          <article class="step">
+            <b>ETAPA 01</b>
+            <h3>Contato</h3>
+            <p>Você explica a necessidade e envia fotos, vídeos ou informações iniciais pelo WhatsApp.</p>
+          </article>
+
+          <article class="step">
+            <b>ETAPA 02</b>
+            <h3>Avaliação</h3>
+            <p>Analisamos o cenário e, quando necessário, realizamos visita técnica para diagnóstico.</p>
+          </article>
+
+          <article class="step">
+            <b>ETAPA 03</b>
+            <h3>Execução</h3>
+            <p>Serviço realizado com método, proteção do ambiente, organização e acabamento cuidadoso.</p>
+          </article>
+
+          <article class="step">
+            <b>ETAPA 04</b>
+            <h3>Entrega</h3>
+            <p>Testes finais, conferência, orientações de uso e transparência sobre o que foi realizado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof">
+      <div class="container proof-card">
+        <div>
+          <span class="eyebrow" style="color:#111">Confiança</span>
+          <p class="quote">“Serviço limpo, organizado e muito acima do padrão que eu estava acostumado.”</p>
+        </div>
+        <div class="client">
+          <strong>Cliente residencial</strong>
+          Reforma elétrica e iluminação
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Projetos realizados</span>
+            <h2 class="section-title">Veja a qualidade da execução.</h2>
+            <p class="section-copy">
+              Trabalhos reais ajudam a mostrar organização, acabamento e variedade técnica.
+            </p>
+          </div>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-primary mini-cta">Ver mais no Instagram</a>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <div class="gallery-thumb"><span>Projeto 01</span></div>
+            <div class="gallery-content">
+              <h3>Instalação residencial</h3>
+              <p>Exemplo de obra com organização, segurança e acabamento limpo.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-thumb"><span>Projeto 02</span></div>
+            <div class="gallery-content">
+              <h3>Quadro elétrico</h3>
+              <p>Montagem, revisão e identificação técnica dos componentes.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-thumb"><span>Projeto 03</span></div>
+            <div class="gallery-content">
+              <h3>Iluminação</h3>
+              <p>Execução de projetos com foco em funcionalidade e impacto visual.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-thumb"><span>Projeto 04</span></div>
+            <div class="gallery-content">
+              <h3>Manutenção elétrica</h3>
+              <p>Correção de falhas, melhorias e atualização de instalações.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-thumb"><span>Projeto 05</span></div>
+            <div class="gallery-content">
+              <h3>Energia solar</h3>
+              <p>Área reservada para mostrar serviços de instalação relacionados ao sistema.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-thumb"><span>Projeto 06</span></div>
+            <div class="gallery-content">
+              <h3>Carregador veicular</h3>
+              <p>Exibição de instalação e infraestrutura para carregamento de veículos elétricos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section faq" id="duvidas">
+      <div class="container">
+        <div style="text-align:center;max-width:820px;margin:0 auto;">
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Antes de chamar um eletricista.</h2>
+          <p class="section-copy" style="margin-left:auto;margin-right:auto;">
+            Algumas respostas rápidas para facilitar sua decisão e o primeiro contato.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>Como funciona o orçamento?</summary>
+            <div class="faq-answer">
+              O primeiro contato pode ser feito pelo WhatsApp. Fotos, vídeos e uma breve descrição ajudam a entender o serviço. Quando necessário, é feita avaliação no local.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Atende serviços residenciais e comerciais?</summary>
+            <div class="faq-answer">
+              Sim. A atuação inclui instalações e manutenção residencial, predial e diferentes demandas técnicas.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Faz instalação de carregador para veículo elétrico?</summary>
+            <div class="faq-answer">
+              Sim. Renato possui formação para instalação de carregador de veículo elétrico e avaliação da infraestrutura necessária.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Também trabalha com energia solar e automação?</summary>
+            <div class="faq-answer">
+              Sim. Entre as especializações estão instalação de painel solar e automação residencial.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Quais informações devo enviar no primeiro contato?</summary>
+            <div class="faq-answer">
+              Uma descrição do problema ou serviço, endereço aproximado da região e, se possível, fotos ou vídeos do local.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="cta-box">
+          <span class="eyebrow">Fale com Renato Costa</span>
+          <h2>Explique o que você precisa. O próximo passo começa por aqui.</h2>
+          <p>
+            Entre em contato pelo WhatsApp para orçamento, avaliação inicial ou esclarecimento de dúvidas.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3>Atendimento pelo WhatsApp</h3>
+              <p>O canal mais rápido para enviar fotos, vídeos e explicar o serviço.</p>
+              <a class="btn btn-primary" style="width:100%" href="https://wa.me/5521992209322?text=Ol%C3%A1%2C%20Renato.%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank">
+                Pedir orçamento agora →
+              </a>
+            </div>
+
+            <div class="contact-card">
+              <h3>Outros canais</h3>
+              <p>Use o canal que for mais conveniente.</p>
+              <div class="contact-list">
+                <a href="tel:+5521992209322"><span>Telefone</span><strong>(21) 99220-9322</strong></a>
+                <a href="mailto:reatomoeng@gmail.com"><span>E-mail</span><strong>reatomoeng@gmail.com</strong></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener"><span>Instagram</span><strong>Abrir perfil</strong></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener"><span>YouTube</span><strong>Ver apresentação</strong></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#inicio" class="brand">
+            <span class="brand-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M13 2 4.8 13h6L10 22l9.2-12h-6L13 2Z"/>
+              </svg>
+            </span>
+            RENATO COSTA
+          </a>
+          <p style="color:#7f7f7b;max-width:430px;margin-top:18px">
+            Especialista em instalação e manutenção elétrica com segurança, precisão, organização e acabamento profissional.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Navegação</div>
+          <a href="#servicos">Serviços</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#certificacoes">Certificações</a>
+          <a href="#apresentacao">Apresentação</a>
+          <a href="#galeria">Projetos</a>
+          <a href="#processo">Processo</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato">Contato</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Contato</div>
+          <a href="tel:+5521992209322">(21) 99220-9322</a>
+          <a href="mailto:reatomoeng@gmail.com">reatomoeng@gmail.com</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+          <span>Sua cidade — UF</span>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <span>© 2026 Renato Costa — Instalação e Manutenção Elétrica. Todos os direitos reservados.</span>
+        <span>Energia bem feita muda tudo.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // rolagem suave com compensação do cabeçalho
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+  <a class="sticky-whatsapp" href="https://wa.me/5521992209322?text=Ol%C3%A1%2C%20Renato.%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" aria-label="Pedir orçamento no WhatsApp">
+    WhatsApp · Pedir orçamento
+  </a>
+
+</body>
+</html>
